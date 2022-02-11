@@ -7,7 +7,7 @@ from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from tiktok_downloader import snaptik
-from Config import Config
+    from Config import Config
 else:
     from config import Config
 
