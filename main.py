@@ -192,9 +192,6 @@ async def text(message: types.Message):
             print(e)
             await bot.send_message(chat_id=message.chat.id,
                                    text='İndirme hatası, yanlış bağlantı, video silinmiş veya bulamadım.')
-    else:
-        await bot.send_message(chat_id=message.chat.id, text='Ne Diyon aq bir Tiktok videosu bağlantısı at.')
-
 
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
