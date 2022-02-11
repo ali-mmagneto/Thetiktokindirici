@@ -15,7 +15,7 @@ else:
 
 config = configparser.ConfigParser()
 admin_id = Config.ADMIN_ID
-TOKEN = '{Config.BOT_TOKEN}'
+TOKEN = 'Config.BOT_TOKEN'
 
 with sqlite3.connect('database.db') as con:
     cur = con.cursor()
