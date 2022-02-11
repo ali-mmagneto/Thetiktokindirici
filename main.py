@@ -95,12 +95,12 @@ if not os.path.exists('videos'):
 async def start_command(message: types.Message):
     new_user(message.chat.id)
     await bot.send_message(chat_id=message.chat.id,
-                           text=' Приветствую!\n\nЯ помогаю скачивать видео без водяного знака с TikTok.\nПросто отправь мне ссылку на ролик. ')
+                           text=' Merhaba {} \n\nSana TikTok'tan Logosuz video indirmen için yardım edicem.\nSadece bana videonun bağlantısını gönder.\n\n Made By: @mmagneto ')
 
 @dp.message_handler(commands='send')
 async def command_letter(message):
     if str(message.chat.id) in admin_id:
-        await bot.send_message(message.chat.id, f"*Рассылка началась \nБот оповестит когда рассылку закончит*", parse_mode='Markdown')
+        await bot.send_message(message.chat.id, f"*Bülten başladı \nBot, bülten tamamlandığında sizi bilgilendirecektir*", parse_mode='Markdown')
         receive_users, block_users = 0, 0
         text = message.text.split()
         if len(text) > 1:
@@ -114,9 +114,9 @@ async def command_letter(message):
                     receive_users += 1
             except:
                  block_users += 1
-        await bot.send_message(message.chat.id, f"*Рассылка была завершена *\n"
-                                                              f"Получили сообщение: *{receive_users}*\n"
-                                                              f"Заблокировали бота: *{block_users}*", parse_mode='Markdown')
+        await bot.send_message(message.chat.id, f"*Haber bülteni tamamlandı *\n"
+                                                              f"bir ileti aldı: *{receive_users}*\n"
+                                                              f"Engellenen bot: *{block_users}*", parse_mode='Markdown')
 
 @dp.message_handler(commands=['help'])
 async def help_command(message: types.Message):
@@ -128,25 +128,25 @@ async def statistika_command(message: types.Message):
     if str(message.chat.id) in admin_id:
         sk = get_downloads()
         await bot.send_message(chat_id=message.chat.id,
-                               text=f'Количество пользователей: {len(get_users_count())} \nВсего запросов: {sk}')
+                               text=f'Kullanıcı sayısı : {len(get_users_count())} \nToplam istek sayısı: {sk}')
     else:
-        await bot.send_message(chat_id=message.chat.id, text=f'Команда для админов')
+        await bot.send_message(chat_id=message.chat.id, text=f'Yöneticiler için')
 
 @dp.message_handler(commands=['send'])
 async def statistika_command(message: types.Message):
     if str(message.chat.id) in admin_id:
         sk = get_downloads()
         await bot.send_message(chat_id=message.chat.id,
-                               text=f'Количество пользователей: {len(get_users_count())} \nВсего запросов: {sk}')
+                               text=f'Kullanıcı sayısı: {len(get_users_count())} \nİstek Sayısı: {sk}')
     else:
-        await bot.send_message(chat_id=message.chat.id, text=f'Команда для админов')
+        await bot.send_message(chat_id=message.chat.id, text=f'Yöneticiler için')
 
 
 @dp.message_handler(content_types=['text'])
 async def text(message: types.Message):
     new_user(message.chat.id)
     if message.text.startswith('https://www.tiktok.com'):
-        await bot.send_message(chat_id=message.chat.id, text='Пожалуйста, подождите...')
+        await bot.send_message(chat_id=message.chat.id, text='Bekle İndiriyom...')
         video_url = message.text
         try:
             snaptik(video_url).get_media()[0].download(f"./videos/result_{message.from_user.id}.mp4")
@@ -157,15 +157,15 @@ async def text(message: types.Message):
                 await bot.send_video(
                     chat_id=message.chat.id,
                     video=file.read(),
-                    caption='Скачано в @your'
+                    caption='@TikTokVideoDownRobot ile indirildi'
                 )
             os.remove(path)
         except Exception as e:
             print(e)
             await bot.send_message(chat_id=message.chat.id,
-                                   text='Ошибка при скачивании, неверная ссылка, видео было удалено или я его не нашел.')
+                                   text='İndirme hatası, yanlış bağlantı, video silinmiş veya bulamadım.')
     elif message.text.startswith('https://vm.tiktok.com') or message.text.startswith('http://vm.tiktok.com'):
-        await bot.send_message(chat_id=message.chat.id, text='Пожалуйста, подождите...')
+        await bot.send_message(chat_id=message.chat.id, text='Bekle İndiriyom...')
         video_url = message.text
         try:
             add_new_download()
@@ -175,18 +175,17 @@ async def text(message: types.Message):
                 await bot.send_video(
                     chat_id=message.chat.id,
                     video=file.read(),
-                    caption='Скачано в @your'
+                    caption='@TikTokVideoDownRobot ile indirildi'
                 )
             await bot.delete_message(message.chat.id, message.message_id + 1)
             os.remove(path)
         except Exception as e:
             print(e)
             await bot.send_message(chat_id=message.chat.id,
-                                   text='Ошибка при скачивании, неверная ссылка, видео было удалено или я его не нашел.')
+                                   text='İndirme hatası, yanlış bağlantı, video silinmiş veya bulamadım.')
     else:
-        await bot.send_message(chat_id=message.chat.id, text='Я тебя не понял, отправь мне ссылку на видео TikTok.')
+        await bot.send_message(chat_id=message.chat.id, text='Ne Diyon aq bir Tiktok videosu bağlantısı at.')
 
 
 if __name__ == "__main__":
-    # Запускаем бота
     executor.start_polling(dp, skip_updates=True)
