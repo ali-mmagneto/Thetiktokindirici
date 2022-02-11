@@ -157,7 +157,7 @@ async def text(message: types.Message):
                 await bot.send_video(
                     chat_id=message.chat.id,
                     video=file.read(),
-                    caption=''''@TikTokVideoDownRobot ile indirildi.''''
+                    caption='"""@TikTokVideoDownRobot ile indirildi."""'
                 )
             os.remove(path)
         except Exception as e:
@@ -175,7 +175,7 @@ async def text(message: types.Message):
                 await bot.send_video(
                     chat_id=message.chat.id,
                     video=file.read(),
-                    caption=''''@TikTokVideoDownRobot ile indirildi.''''
+                    caption='"""@TikTokVideoDownRobot ile indirildi."""'
                 )
             await bot.delete_message(message.chat.id, message.message_id + 1)
             os.remove(path)
