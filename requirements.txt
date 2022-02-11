@@ -19,6 +19,7 @@ soupsieve==2.2.1
 typing-extensions==3.10.0.2
 url-normalize==1.4.3
 urllib3==1.26.7
+pyrogram
 yarl==1.6.3
 aiogram
 tiktok_downloader
