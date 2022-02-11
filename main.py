@@ -100,7 +100,7 @@ async def start_command(message: types.Message):
                            parse_mode="HTML",
                            disable_web_page_preview=True,
                            reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('Sahip', url=f"https://t.me/mmagneto"),
-                                                                                       InlineKeyboardButton('Kanalıma Katıl', url='https://t.me/mmagneto3') ] ]  ) ) 
+                                                                                       InlineKeyboardButton('Kanalıma Katıl', url='https://t.me/mmagneto3') ] ]  ) ), 
                                                                                   ( [ [InlineKeyboardButton('Kaynak Kod 😉', url='https://github.com/ali-mmagneto/Thetiktokindirici') ] ]  ) ) 
 @dp.message_handler(commands='send')
 async def command_letter(message):
