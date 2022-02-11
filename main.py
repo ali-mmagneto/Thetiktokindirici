@@ -9,7 +9,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from tiktok_downloader import snaptik
     from Config import Config
 else:
-    from Config import Config
+    from config import Config
 
 config = configparser.ConfigParser()
 admin_id = Config.ADMIN_ID
