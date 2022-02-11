@@ -18,6 +18,8 @@
   "success_url": "https://t.me/tiranozorbot",
   "website": "https://github.com/Turkce-Botlar-Sohbet",
   "repository": "https://github.com/Turkce-Botlar-Sohbet/URL-Yukleyici",
+  },
+  "env": {
     "BOT_TOKEN": {
       "description": "@BotFather'dan alın.",
       "value": ""
