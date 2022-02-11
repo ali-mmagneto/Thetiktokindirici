@@ -1,33 +1,17 @@
 {
-  "name": "URL-Yukleyici",
-  "description": "URL'leri Telegram'a Dosya ve Video Olarak Yüklemek için Telegram Botu.",
-  "keywords": [
-    "telegram",
-    "best",
-    "youtube",
-    "downloader",
-    "open",
-    "source",
-    "multi",
-    "purpose",
-    "ffmpeg",
-    "remote",
-    "uploader"
-  ],
-  "logo": "https://telegra.ph/file/ad1d90498334a3b59789b.jpg",
-  "success_url": "https://t.me/tiranozorbot",
-  "website": "https://github.com/Turkce-Botlar-Sohbet",
-  "repository": "https://github.com/Turkce-Botlar-Sohbet/URL-Yukleyici",
-  },
+  "name": "TİKTOK İNDİRİCİ BOT",
+  "logo":"https://telegra.ph/file/12efaa954b021d6c8c6e1.jpg",
+  "description": "Tiktok bağlantılarını Telegrama Yükler.",
   "env": {
     "BOT_TOKEN": {
-      "description": "@BotFather'dan alın.",
+      "description": "@botfather ile Alabilirsin.",
       "value": ""
     },
     "ADMIN_ID": {
-      "description": "iD'ini Bulmayı da bil bi zahmet.",
+      "description": "İD'nide almayı bil bi zahmet.",
       "value": ""
-      },
+    }
+  },
   "buildpacks": [{
     "url": "heroku/python"
   }]
