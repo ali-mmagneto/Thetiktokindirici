@@ -118,9 +118,9 @@ async def command_letter(message):
                                                               f"bir ileti aldı: *{receive_users}*\n"
                                                               f"Engellenen bot: *{block_users}*", parse_mode='Markdown')
 
-@dp.message_handler(content_types=['text'])
+@dp.message_handler(commands='help')
 async def help_command(message: types.Message):
-    await bot.send_message(chat_id=message.chat.id, text='Скопируй ссылку на видео TikTok и отправь её мне:')
+    await bot.send_message(chat_id=message.chat.id, text='Bağlantıyı TikTok videosundan kopyalayın ve bana gönderin.')
 
 
 @dp.message_handler(commands=['stats'])
