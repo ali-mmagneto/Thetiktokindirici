@@ -95,8 +95,11 @@ if not os.path.exists('videos'):
 async def start_command(message: types.Message):
     new_user(message.chat.id)
     await bot.send_message(chat_id=message.chat.id,
-                           text='Merhaba\n\nSana TikToktan logosuz video indirmen için yardım edicem.\nSadece bana videonun bağlantısını gönder.\n\nMade By: @mmagneto')
-
+                           text="""Merhaba\n\nSana TikToktan logosuz video indirmen için yardım edicem.\nSadece bana videonun bağlantısını gönder.\n\nMade By: @mmagneto""",
+                           parse_mode="HTML",
+                           disable_web_page_preview=True,
+                           reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('Sahip', url=f"https://t.me/mmagneto"),
+                                                                                       InlineKeyboardButton('Kanalıma Katıl', url='https://t.me/mmagneto3') ] ]  ) )
 @dp.message_handler(commands='send')
 async def command_letter(message):
     if str(message.chat.id) in admin_id:
@@ -157,7 +160,8 @@ async def text(message: types.Message):
                 await bot.send_video(
                     chat_id=message.chat.id,
                     video=file.read(),
-                    caption='@TikTokVideoDownRobot ile indirildi.'
+                    caption='@TikTokVideoDownRobot ile indirildi.',
+                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('Sahip', url=f"https://t.me/mmagneto") ] ]  ) 
                 )
             os.remove(path)
         except Exception as e:
