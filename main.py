@@ -95,7 +95,7 @@ if not os.path.exists('videos'):
 async def start_command(message: types.Message):
     new_user(message.chat.id)
     await bot.send_message(chat_id=message.chat.id,
-                           text='Merhaba {}\n\nSana TikToktan logosuz video indirmen için yardım edicem.\nSadece bana videonun bağlantısını gönder.\n\nMade By: @mmagneto')
+                           text='Merhaba"+update.from_user.first_name+"\n\nSana TikToktan logosuz video indirmen için yardım edicem.\nSadece bana videonun bağlantısını gönder.\n\nMade By: @mmagneto')
 
 @dp.message_handler(commands='send')
 async def command_letter(message):
@@ -157,7 +157,7 @@ async def text(message: types.Message):
                 await bot.send_video(
                     chat_id=message.chat.id,
                     video=file.read(),
-                    caption='@TikTokVideoDownRobot ile indirildi'
+                    caption=''''@TikTokVideoDownRobot ile indirildi.''''
                 )
             os.remove(path)
         except Exception as e:
@@ -175,7 +175,7 @@ async def text(message: types.Message):
                 await bot.send_video(
                     chat_id=message.chat.id,
                     video=file.read(),
-                    caption='@TikTokVideoDownRobot ile indirildi'
+                    caption=''''@TikTokVideoDownRobot ile indirildi.''''
                 )
             await bot.delete_message(message.chat.id, message.message_id + 1)
             os.remove(path)
