@@ -27,9 +27,11 @@
     "ADMIN_ID": {
       "description": "iD'ini Bulmayı da bil bi zahmet.",
       "value": ""
-    }
-  },
-  {
+   }
+ },
+ {
+], 
+"buildpacks": [
     "url": "heroku/python"
   },
   "formation": {
