@@ -95,7 +95,7 @@ if not os.path.exists('videos'):
 async def start_command(message: types.Message):
     new_user(message.chat.id)
     await bot.send_message(chat_id=message.chat.id,
-                           text='Merhaba {} \n\nSana TikTok'tan Logosuz video indirmen için yardım edicem.\nSadece bana videonun bağlantısını gönder.\n\n Made By: @mmagneto')
+                           text='Merhaba {}\n\nSana TikTok'tan Logosuz video indirmen için yardım edicem.\nSadece bana videonun bağlantısını gönder.\n\nMade By: @mmagneto')
 
 @dp.message_handler(commands='send')
 async def command_letter(message):
