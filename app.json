@@ -19,7 +19,7 @@
   "website": "https://github.com/Turkce-Botlar-Sohbet",
   "repository": "https://github.com/Turkce-Botlar-Sohbet/URL-Yukleyici",
     "BOT_TOKEN": {
-      "description": @BotFather'dan alın.",
+      "description": "@BotFather'dan alın.",
       "value": ""
     },
     "ADMIN_ID": {
