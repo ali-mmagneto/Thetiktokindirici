@@ -1,6 +1,6 @@
 {
   "name": "TİKTOK İNDİRİCİ BOT",
-  "logo":"https://telegra.ph/file/12efaa954b021d6c8c6e1.jpg",
+  "logo":"https://telegra.ph/file/ff56e221b0a50dc90926a.jpg",
   "description": "Tiktok bağlantılarını Telegrama Yükler.",
   "env": {
     "BOT_TOKEN": {
