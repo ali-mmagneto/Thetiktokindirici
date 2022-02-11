@@ -1,13 +1,15 @@
 import os, configparser, requests
+import sqlite3
+import logging
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from tiktok_downloader import snaptik
-import sqlite3
-import logging
-
+from sample_config import Config
+else:
+    from config import Config
 
 config = configparser.ConfigParser()
 config.read("settings.ini")
