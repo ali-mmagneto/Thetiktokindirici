@@ -14,7 +14,7 @@ else:
     from config import Config
 
 config = configparser.ConfigParser()
-admin_id = Config.ADMIN_ID
+admin_id =Config.ADMIN_ID
 TOKEN =Config.BOT_TOKEN
 
 with sqlite3.connect('database.db') as con:
