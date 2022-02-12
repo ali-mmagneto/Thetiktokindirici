@@ -184,7 +184,7 @@ async def text(message: types.Message):
                     chat_id=message.chat.id,
                     video=file.read(),
                     caption='@TikTokVideoDownRobot ile indirildi.', 
-                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('Destek Ol Yada Olma', url=f"https://t.me/mmagneto3") ] ]  ) 
+                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('Bot', url=f"https://t.me/TikTokVideoDownRobot") ] ]  ) 
                 )
             await bot.delete_message(message.chat.id, message.message_id + 1)
             os.remove(path)
