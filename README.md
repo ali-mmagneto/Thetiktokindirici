@@ -9,3 +9,4 @@ ADMIN_ID Rose Benzeri Botlardan Bul.
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ali-mmagneto/Thetiktokindirici)
 
 
+Bot Sohbet grublarında çalışır Yöneticilik vermeniz gerek ama. 
