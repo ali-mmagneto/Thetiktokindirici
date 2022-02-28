@@ -24,4 +24,4 @@ yarl==1.6.3
 aiogram
 tiktok_downloader
 virtualenv
-https://docs.pyrogram.org/topics/tgcrypto
+tgcrypto
